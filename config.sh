@@ -2,7 +2,7 @@
 
 # actualizacion del sistema
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 # Cambio de propietario de la ruta /opt/
 sudo chown depp3:depp3 /opt/
@@ -14,7 +14,7 @@ mkdir /opt/config/
 git clone https://github.com/IDepp3/vim.git /opt/config/vim
 
 # instalando vim
-sudo apt install vim
+sudo apt install vim -y
 
 # eliminamos archivo .vimrc por defecto
 rm ~/.vimrc

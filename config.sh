@@ -1,10 +1,11 @@
 #!/bin/bash
 
+# actualizacion del sistema
+sudo apt update
+sudo apt upgrade
+
 # Cambio de propietario de la ruta /opt/
 sudo chown depp3:depp3 /opt/
-
-# Instalando git
-sudo apt install -y git
 
 # Carpeta de configuracion 
 mkdir /opt/config/
@@ -24,8 +25,8 @@ ln -s /opt/config/vim/.vimrc ~/.vimrc
 
 # instalando snap
 NOSNAP=/etc/apt/preferences.d/nosnap.pref
-if [[ -d $NOSNAP ]]; then
-	sudo rm /etc/apt/preferences.d/nosnap.pref
+if [[ -f $NOSNAP ]]; then
+	sudo rm $NOSNAP
 fi
 
 sudo apt install -y snapd

@@ -44,7 +44,10 @@ read
 
 # abrimos vscode para que se creen las carpetas
 code
+read
 rm ~/.config/Code/User/settings.json
+rm -r ~/.vscode/extensions
+
 
 # intalamos la fuente
 sudo apt install -y fonts-firacode
@@ -56,6 +59,7 @@ ln -s /opt/config/.vscode/extensions ~/.vscode/
 
 echo -e "$GREEN [ FINALIZO LA CONFIGURACION DE VSCODE]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
+read
 
 # instalacion de ZSH Oh my ZSH y TMUX
 
@@ -76,9 +80,7 @@ sudo apt install -y fonts-powerline
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # pluggin syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # colocamos por defecto zsh
 chsh -s $(which zsh)
@@ -88,6 +90,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/instal
 
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE ZSH ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
+read
 
 # instalacion de java 8
 sudo apt install -y openjdk-8-jdk openjdk-8-jre

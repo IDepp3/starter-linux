@@ -72,6 +72,14 @@ ln -s /opt/config/zsh/.zshrc ~/
 # fuente para que visualicen correctamente ohmyzsh
 sudo apt install -y fonts-powerline
 
+# pluggin autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# pluggin syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+
+
 # colocamos por defecto zsh
 chsh -s $(which zsh)
 

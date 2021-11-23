@@ -45,11 +45,19 @@ read
 # abrimos vscode para que se creen las carpetas
 # code
 
-#rm ~/.config/Code/User/settings.json
-#rm -r ~/.vscode/extensions
 
 # intalamos la fuente
 sudo apt install -y fonts-firacode
+
+# iniciamos vscode y dormimos para que cree los archivo correspondientes
+code
+
+sleep 10
+
+rm ~/.config/Code/User/settings.json
+rm -r ~/.vscode/extensions
+
+sudo pkill code
 
 # creamos simbolicos con la configuracion de vscode
 ln -s /opt/config/.vscode/settings.json ~/.config/Code/User/
@@ -74,6 +82,8 @@ sudo apt install -y fonts-powerline
 
 # colocamos por defecto zsh
 chsh -s $(which zsh)
+
+rm ~/.zshrc
 
 ln -s /opt/config/zsh/.zshrc ~/
 

@@ -70,6 +70,9 @@ sudo apt install -y zsh
 # eliminamos el archivo que crea por defecto
 rm ~/.zshrc
 
+# instalamos oh my ZSH
+$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # simbolico para que tome la config personal
 ln -s /opt/config/zsh/.zshrc ~/
 
@@ -85,9 +88,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # colocamos por defecto zsh
 chsh -s $(which zsh)
 
-# instalamos oh my ZSH
-$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE ZSH ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
 read
@@ -100,9 +100,9 @@ echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
 read
 
 # instalacion de nvm node y angular
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
-source ~/.bashrc
+source ~/.zshrc
 
 nvm install v16.13.0
 
@@ -112,6 +112,7 @@ npm install -g @angular/cli
 
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE NODE NPM Y ANGULAR ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
+read
 
 # instalacion de MAVEN y configuracion de mvn 
 
@@ -121,4 +122,4 @@ source /etc/profile.d/maven.sh
 
 echo -e "$GREEN [ FINALIZO LA CONFIGURACION DE MAVEN ]"
 echo -e "Presione una tecla para continuar... $END_COLOR"
-
+read

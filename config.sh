@@ -67,23 +67,11 @@ sudo apt install -y wget curl
 
 sudo apt install -y zsh
 
-# eliminamos el archivo que crea por defecto
-rm ~/.zshrc
-
 # instalamos oh my ZSH
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# simbolico para que tome la config personal
-ln -s /opt/config/zsh/.zshrc ~/
-
 # fuente para que visualicen correctamente ohmyzsh
 sudo apt install -y fonts-powerline
-
-# pluggin autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-# pluggin syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # colocamos por defecto zsh
 chsh -s $(which zsh)
@@ -103,12 +91,6 @@ read
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 source ~/.zshrc
-
-nvm install v16.13.0
-
-nvm install-latest-npm
-
-npm install -g @angular/cli
 
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE NODE NPM Y ANGULAR ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"

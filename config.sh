@@ -68,13 +68,15 @@ sudo apt install -y wget curl
 sudo apt install -y zsh
 
 # instalamos oh my ZSH
-$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # fuente para que visualicen correctamente ohmyzsh
 sudo apt install -y fonts-powerline
 
 # colocamos por defecto zsh
 chsh -s $(which zsh)
+
+ln -s /opt/config/zsh/.zshrc ~/
 
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE ZSH ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"

@@ -43,11 +43,10 @@ echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
 read
 
 # abrimos vscode para que se creen las carpetas
-code
-read
-rm ~/.config/Code/User/settings.json
-rm -r ~/.vscode/extensions
+# code
 
+#rm ~/.config/Code/User/settings.json
+#rm -r ~/.vscode/extensions
 
 # intalamos la fuente
 sudo apt install -y fonts-firacode

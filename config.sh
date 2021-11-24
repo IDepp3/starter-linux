@@ -35,6 +35,7 @@ sudo apt install -y snapd
 
 snap install code --classic
 snap install intellij-idea-community --classic
+snap install android-studio --classic
 snap install notion-snap
 snap install slack --classic
 
@@ -54,7 +55,6 @@ code
 
 sleep 10
 
-rm ~/.config/Code/User/settings.json
 rm -r ~/.vscode/extensions
 
 sudo pkill code
@@ -86,6 +86,8 @@ chsh -s $(which zsh)
 rm ~/.zshrc
 
 ln -s /opt/config/zsh/.zshrc ~/
+
+# TODO queda pendiente reiniciar la terminal y/o cerrar la terminal actual y trabajar desde una nueva terminal
 
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE ZSH ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"

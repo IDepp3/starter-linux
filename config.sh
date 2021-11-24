@@ -87,6 +87,11 @@ rm ~/.zshrc
 
 ln -s /opt/config/zsh/.zshrc ~/
 
+source ~/.zshrc
+
+nvmInstall
+
+configZsh
 # TODO queda pendiente reiniciar la terminal y/o cerrar la terminal actual y trabajar desde una nueva terminal
 
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE ZSH ]"
@@ -104,6 +109,8 @@ read
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 source ~/.zshrc
+
+gnome-terminal -- 
 
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE NODE NPM Y ANGULAR ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"

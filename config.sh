@@ -126,4 +126,4 @@ echo -e "$GREEN [ FINALIZO LA CONFIGURACION DE MAVEN ]"
 echo -e "Presione una tecla para continuar... $END_COLOR"
 read
 
-exit
+reboot

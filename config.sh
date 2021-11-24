@@ -39,7 +39,7 @@ snap install android-studio --classic
 snap install notion-snap
 snap install slack --classic
 
-echo -e "$GREEN [FINALIZO LA INSTALACION DE SNAP, INTELLIJ, NOTION, SLACK]"
+echo -e "$GREEN [FINALIZO LA INSTALACION DE SNAP, INTELLIJ, ANDROID, NOTION, SLACK]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
 read
 

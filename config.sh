@@ -89,12 +89,10 @@ ln -s /opt/config/zsh/.zshrc ~/
 
 source ~/.zshrc
 
+# TODO queda pendiente reiniciar la terminal y/o cerrar la terminal actual y trabajar desde una nueva terminal
 zsh
 
-nvmInstall
-
 configZsh
-# TODO queda pendiente reiniciar la terminal y/o cerrar la terminal actual y trabajar desde una nueva terminal
 
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE ZSH ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
@@ -112,6 +110,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 source ~/.zshrc
 
+nvmInstall
 echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE NODE NPM Y ANGULAR ]"
 echo -e "PRESIONE UNA TECLA PARA CONTINUAR... $END_COLOR"
 read
@@ -126,4 +125,14 @@ echo -e "$GREEN [ FINALIZO LA CONFIGURACION DE MAVEN ]"
 echo -e "Presione una tecla para continuar... $END_COLOR"
 read
 
-reboot
+# instalacion de bspwm
+sudo apt install -y bspwm 
+sudo apt install -y bspwm kakoune
+
+mkdir ~/.config/{bspwm,sxhkd}
+
+ln -s /opt/config/bspwm/bspwmrc ~/.config/bspwm/
+ln -s /opt/config/sxhkd/sxhkdrc ~/.config/sxhkd/
+
+sudo apt install -y dmenu feh compton
+

@@ -136,3 +136,28 @@ ln -s /opt/config/sxhkd/sxhkdrc ~/.config/sxhkd/
 
 sudo apt install -y dmenu feh compton
 
+echo -e "$GREEN [ FINALIZO INSTALACION DE BSPWM Y COMPONENTES ]"
+echo -e "Presione una tecla para continuar... $END_COLOR"
+read
+
+git clone https://github.com/alacritty/alacritty ~/.config/
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+cd ~/.config/alacritty/
+
+rustup override set stable
+rustup update stable
+
+sudo apt-get install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+
+cargo build --release
+
+sudo tic -xe alacritty,alacritty-direct extra/lacritty.info
+
+infocmp alacritty
+
+sudo cp target/release/alacritty /usr/local/bin
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
+sudo update-dektop-database

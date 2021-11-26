@@ -161,3 +161,25 @@ sudo cp target/release/alacritty /usr/local/bin
 sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
 sudo desktop-file-install extra/linux/Alacritty.desktop
 sudo update-dektop-database
+
+echo -e "$GREEN [ FINALIZO LA INSTALACION Y CONFIGURACION DE ALACRITTY ] "
+echo -e "Presione una tecla para continuar..."
+read
+
+# instalacion de flutter
+# dependencias
+sudo apt install -y curl unzip zip 
+
+git clone https://github.com/flutter/flutter -b stable /opt/config/flutter/
+
+ln -s /opt/config/flutter ~/
+
+echo "export PATH='\$PATH:\$HOME/flutter/bin'" >> ~/.profile
+
+source ~/.profile
+
+flutter
+
+echo "export PATH='\$PATH:\$HOME/flutter/bin/cache/dart-sdk/bin'" >> ~/.profile
+
+source ~/.profile
